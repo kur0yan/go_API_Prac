@@ -1,5 +1,9 @@
 package main
 
+import (
+	"pokeprac/app"
+)
+
 func main() {
-	app.handleRequests()
+	app.HandleRequests()
 }
