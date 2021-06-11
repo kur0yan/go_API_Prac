@@ -13,6 +13,7 @@ import (
 func HandleRequests() {
 	myRouter := mux.NewRouter().StrictSlash(true)
 
+	myRouter.HandleFunc("/", handlers.HandleHome)
 	myRouter.HandleFunc("/pokemon", handlers.GetPokeList).Methods("GET")
 	fmt.Println("Listening on localhost:10001")
 	log.Fatal(http.ListenAndServe(":10001", myRouter))

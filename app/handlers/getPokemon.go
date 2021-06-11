@@ -11,7 +11,6 @@ import (
 	"pokeprac/config"
 
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func GetPokeList(w http.ResponseWriter, r *http.Request) {
@@ -23,7 +22,7 @@ func GetPokeList(w http.ResponseWriter, r *http.Request) {
 	client := config.ConnectDB("mongodb://localhost:27017")
 	pokemonCollection := client.Database("gotest").Collection("pokemon")
 
-	cursor, err := pokemonCollection.Find(ctx, bson.D{primitive.E{Key: "pokedex_number", Value: 150}})
+	cursor, err := pokemonCollection.Find(ctx, bson.D{})
 
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
