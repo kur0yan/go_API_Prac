@@ -27,7 +27,9 @@ All the data served by the endpoints is currently being pulled from a MongoDB co
 The current available endpoints are:
 
 ```
-* \pokemon -> Returns all the documents in the collection and displays them as a collection of JSON objects
+=> \pokemon (Using GET Method) -> Returns all the documents in the collection and displays them as a collection of JSON objects
+=> \pokemon (Using POST Method) -> Inserts JSON Objects as documents into the collection and returns ObjectID
+=> \pokemon\{id} -> Returns document(s) with the given Pokedex Number equal to {id}
 
 ```
 
