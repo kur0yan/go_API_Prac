@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+
+    mongo:
+        image: mongo
+        container_name: Mongoservice
+        ports: 
+            - "27017:27017"
+    server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on: 
+            - mongo    
+        ports: 
+            - "10001:10001"
